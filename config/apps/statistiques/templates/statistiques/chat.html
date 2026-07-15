@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent IA de statistiques</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f3f8ff;
+            --panel: #ffffff;
+            --panel-2: #f8fbff;
+            --text: #0f172a;
+            --muted: #64748b;
+            --primary: #2563eb;
+            --accent: #0ea5e9;
+            --border: rgba(15, 23, 42, 0.08);
+            --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0; font-family: 'Inter', sans-serif; color: var(--text);
+            background: linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%);
+            min-height: 100vh;
+        }
+        .app { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+        .sidebar {
+            background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+            padding: 1.4rem 1rem; border-right: 1px solid var(--border);
+        }
+        .brand { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 2rem; }
+        .brand-badge {
+            width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; font-size: 1.15rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            box-shadow: 0 12px 26px rgba(139, 92, 246, 0.26);
+        }
+        .brand h1 { margin: 0; font-size: 1rem; color: var(--text); }
+        .brand p { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.84rem; }
+        .nav { display: grid; gap: 0.5rem; }
+        .nav-item {
+            padding: 0.8rem 0.9rem; border-radius: 12px; color: var(--muted); background: transparent;
+            display: flex; align-items: center; gap: 0.7rem; font-weight: 600; cursor: pointer;
+            transition: all 0.2s ease; border: 1px solid transparent;
+        }
+        .nav-item:hover { color: var(--primary); background: rgba(37, 99, 235, 0.07); transform: translateX(3px); border-color: rgba(37, 99, 235, 0.12); }
+        .nav-item.active { color: var(--primary); background: rgba(37, 99, 235, 0.09); border-color: rgba(37, 99, 235, 0.16); }
+        .main { padding: 1.4rem; }
+        .topbar {
+            display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;
+            padding: 1rem 1.1rem; border-radius: 18px; background: var(--panel); border: 1px solid var(--border); box-shadow: var(--shadow);
+        }
+        .topbar h2 { margin: 0; font-size: 1.05rem; }
+        .topbar p { margin: 0.2rem 0 0; color: var(--muted); font-size: 0.9rem; }
+        .pill {
+            padding: 0.55rem 0.8rem; border-radius: 999px; background: rgba(37, 99, 235, 0.08);
+            color: var(--primary); font-size: 0.84rem; font-weight: 700; border: 1px solid rgba(37, 99, 235, 0.12);
+        }
+        .hero {
+            padding: 1.2rem; border-radius: 22px; background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(14, 165, 233, 0.06));
+            border: 1px solid rgba(37, 99, 235, 0.12); margin-bottom: 1rem; position: relative; overflow: hidden;
+        }
+        .hero::after {
+            content: ""; position: absolute; inset: auto -20px -20px auto; width: 140px; height: 140px;
+            background: radial-gradient(circle, rgba(34, 211, 238, 0.16), transparent 70%);
+            pointer-events: none;
+        }
+        .hero h3 { margin: 0 0 0.35rem; font-size: 1.2rem; }
+        .hero p { margin: 0; color: var(--muted); line-height: 1.7; }
+        .grid { display: grid; gap: 1rem; grid-template-columns: 1.2fr 0.8fr; }
+        .card {
+            background: var(--panel); border: 1px solid var(--border); border-radius: 20px; padding: 1rem;
+            box-shadow: var(--shadow); animation: fadeIn .6s ease both; transition: transform .2s ease, box-shadow .2s ease;
+            position: relative;
+        }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 24px 48px rgba(2, 8, 23, 0.22); border-color: rgba(139, 92, 246, 0.26); }
+        .card h3 { margin-top: 0; margin-bottom: 0.8rem; font-size: 1rem; }
+        #chart { min-height: 260px; }
+        #chart svg { overflow: visible; }
+        form { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+        input {
+            flex: 1; min-width: 250px; border: 1px solid rgba(148,163,184,0.22); border-radius: 14px; padding: 0.95rem 1rem;
+            font-size: 1rem; outline: none; color: var(--text); background: #ffffff;
+        }
+        input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.18); }
+        button {
+            border: none; border-radius: 14px; padding: 0.95rem 1.2rem; background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white; font-weight: 700; cursor: pointer; box-shadow: 0 10px 22px rgba(34, 211, 238, 0.16);
+        }
+        .status { margin-top: 0.8rem; min-height: 1.2rem; font-size: 0.95rem; color: var(--muted); }
+        .error { color: #dc2626; font-weight: 600; }
+        .answer-box {
+            padding: 1rem; border-radius: 16px; background: linear-gradient(145deg, rgba(37, 99, 235, 0.06), rgba(14, 165, 233, 0.04));
+            border: 1px solid rgba(37, 99, 235, 0.1); line-height: 1.75; color: var(--text);
+        }
+        .metric-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1rem; }
+        .metric {
+            padding: 0.9rem; border-radius: 16px; background: var(--panel-2); border: 1px solid var(--border);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);
+        }
+        .metric strong { display: block; font-size: 1.2rem; margin-top: 0.25rem; }
+        .quick-actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.9rem; }
+        .quick-action { border: 1px solid rgba(37, 99, 235, 0.12); background: #fff; color: var(--text); padding: 0.6rem 0.8rem; border-radius: 999px; cursor: pointer; font-size: 0.9rem; }
+        .quick-action:hover { background: rgba(37, 99, 235, 0.07); }
+        .history-card { margin-top: 0.9rem; padding: 0.9rem; border-radius: 16px; background: var(--panel-2); border: 1px solid var(--border); }
+        .history-list { display: grid; gap: 0.45rem; margin-top: 0.6rem; }
+        .history-item { padding: 0.7rem 0.8rem; border-radius: 10px; background: #fff; border: 1px solid rgba(148,163,184,0.16); cursor: pointer; font-size: 0.9rem; }
+        .result-shell { display: grid; gap: 0.8rem; }
+        .result-card { padding: 0.95rem; border-radius: 16px; background: linear-gradient(145deg, rgba(37, 99, 235, 0.06), rgba(14, 165, 233, 0.04)); border: 1px solid rgba(37, 99, 235, 0.1); box-shadow: inset 0 1px 0 rgba(255,255,255,0.6); }
+        .result-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.6rem; }
+        .result-badge { padding: 0.38rem 0.6rem; border-radius: 999px; background: #ffffff; border: 1px solid rgba(148,163,184,0.18); font-size: 0.8rem; }
+        .empty-state { color: var(--muted); font-size: 0.95rem; }
+        .analytics-shell { display: grid; gap: 0.9rem; margin-top: 1rem; }
+        .analytics-card { padding: 0.95rem; border-radius: 16px; background: var(--panel-2); border: 1px solid var(--border); }
+        .filter-row { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+        .filter-row select { padding: 0.7rem 0.8rem; border-radius: 10px; border: 1px solid rgba(148,163,184,0.25); background: #fff; color: var(--text); }
+        .insight-pill { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.45rem 0.7rem; border-radius: 999px; background: rgba(79, 70, 229, 0.08); color: var(--primary); font-size: 0.84rem; font-weight: 600; }
+        table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; }
+        th, td { padding: 0.7rem; border-bottom: 1px solid rgba(148,163,184,0.16); text-align: left; }
+        th { color: #94a3b8; font-size: 0.76rem; text-transform: uppercase; letter-spacing: .08em; }
+        .loader { display: inline-flex; align-items: center; gap: 0.55rem; color: var(--primary); font-weight: 600; }
+        .loader::before { content: ''; width: 14px; height: 14px; border: 2px solid rgba(79, 70, 229, 0.16); border-top-color: var(--primary); border-radius: 50%; animation: spin .8s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 980px) { .app { grid-template-columns: 1fr; } .sidebar { display: none; } .grid { grid-template-columns: 1fr; } .metric-row { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-badge">📊</div>
+                <div>
+                    <h1>Agent IA</h1>
+                    <p>Statistiques</p>
+                </div>
+            </div>
+            <div class="nav">
+                <div class="nav-item active">📈 Tableau de bord</div>
+                <div class="nav-item">🧠 Assistant</div>
+                <div class="nav-item">📊 Graphiques</div>
+                <div class="nav-item">🗂️ Données</div>
+            </div>
+        </aside>
+        <main class="main">
+            <div class="topbar">
+                <div>
+                    <h2>Bienvenue sur votre espace d’analyse</h2>
+                    <p>Posez une question, consultez des indicateurs et visualisez les résultats.</p>
+                </div>
+                <div class="pill">Professionnel • Données fictives</div>
+            </div>
+
+            <div class="hero">
+                <h3>Analyse intelligente des indicateurs régionaux</h3>
+                <p>Un assistant conversationnel conçu pour répondre à des questions simples, comparer des régions, suivre une évolution ou classer les résultats.</p>
+            </div>
+
+            <div class="metric-row">
+                <div class="metric"><span>Régions couvertes</span><strong>{{ metrics.regions_count }}</strong></div>
+                <div class="metric"><span>Années analysées</span><strong>{{ metrics.years_count }}</strong></div>
+                <div class="metric"><span>Indicateurs disponibles</span><strong>{{ metrics.indicators_count }}+</strong></div>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Posez votre question</h3>
+                    <form id="question-form">{% csrf_token %}<input id="question" name="question" type="text" placeholder="Ex. Quelle est la population de Thiès en 2024 ?" /><button type="submit">Envoyer</button></form>
+                    <div class="quick-actions" id="quick-actions">
+                        <button class="quick-action" type="button" data-question="Quelle est la population de Dakar ?">Population</button>
+                        <button class="quick-action" type="button" data-question="Compare le chômage à Dakar et Thiès en 2024">Comparaison</button>
+                        <button class="quick-action" type="button" data-question="Montre l’évolution de l’accès à Internet à Kaolack entre 2020 et 2024">Évolution</button>
+                    </div>
+                    <div id="loading" class="status" style="display:none;"><span class="loader">Analyse en cours…</span></div>
+                    <div id="error" class="status error"></div>
+                    <div class="history-card">
+                        <strong>Historique récent</strong>
+                        <div id="history-list" class="history-list"></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Réponse générée</h3>
+                    <div id="answer" class="answer-box">Votre réponse apparaîtra ici.</div>
+                    <div class="result-badges" id="result-badges"></div>
+                </div>
+                <div class="card">
+                    <h3>Données sources</h3>
+                    <table id="table"></table>
+                </div>
+                <div class="card">
+                    <h3>Graphique</h3>
+                    <div id="chart" style="min-height: 260px;"></div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 1rem;">
+                <h3>Dashboard analytique</h3>
+                <div class="filter-row">
+                    <select id="analytics-region">
+                        <option value="">Toutes les régions</option>
+                        <option value="Dakar">Dakar</option>
+                        <option value="Thiès">Thiès</option>
+                        <option value="Saint-Louis">Saint-Louis</option>
+                        <option value="Kaolack">Kaolack</option>
+                    </select>
+                    <select id="analytics-year">
+                        <option value="">Toutes les années</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                    </select>
+                    <button id="analytics-refresh" type="button">Actualiser</button>
+                </div>
+                <div id="analytics-summary" class="analytics-shell"></div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const form = document.getElementById('question-form');
+        const answer = document.getElementById('answer');
+        const table = document.getElementById('table');
+        const error = document.getElementById('error');
+        const loading = document.getElementById('loading');
+        const chartCanvas = document.getElementById('chart');
+        const badges = document.getElementById('result-badges');
+        const historyList = document.getElementById('history-list');
+        const analyticsRegion = document.getElementById('analytics-region');
+        const analyticsYear = document.getElementById('analytics-year');
+        const analyticsRefresh = document.getElementById('analytics-refresh');
+        const analyticsSummary = document.getElementById('analytics-summary');
+        const historyKey = 'statistiques_history';
+        function loadHistory() {
+            const raw = localStorage.getItem(historyKey) || '[]';
+            try { return JSON.parse(raw); } catch { return []; }
+        }
+
+        function saveHistory(question) {
+            const history = loadHistory();
+            const next = [question, ...history.filter(item => item !== question)].slice(0, 6);
+            localStorage.setItem(historyKey, JSON.stringify(next));
+            renderHistory();
+        }
+
+        function renderHistory() {
+            const history = loadHistory();
+            if (!history.length) {
+                historyList.innerHTML = '<div class="empty-state">Aucune question récente.</div>';
+                return;
+            }
+            historyList.innerHTML = history.map(item => `<div class="history-item" data-question="${item}">${item}</div>`).join('');
+            historyList.querySelectorAll('.history-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    document.getElementById('question').value = item.dataset.question;
+                });
+            });
+        }
+
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.style.outline = '1px solid rgba(56, 189, 248, 0.35)';
+                setTimeout(() => card.style.outline = 'none', 500);
+            });
+        });
+
+        document.querySelectorAll('.quick-action').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.getElementById('question').value = btn.dataset.question;
+            });
+        });
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const question = document.getElementById('question').value.trim();
+            if (!question) { error.textContent = 'Veuillez saisir une question.'; return; }
+            error.textContent = '';
+            loading.style.display = 'block';
+            answer.innerHTML = '<div class="empty-state">Analyse en cours…</div>';
+            table.innerHTML = '';
+            chartCanvas.innerHTML = '';
+            badges.innerHTML = '';
+            const payload = new FormData(form);
+            const response = await fetch('{% url "chat" %}', { method: 'POST', headers: {'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value}, body: payload });
+            loading.style.display = 'none';
+            const data = await response.json();
+            if (!response.ok) { error.textContent = data.error || 'Erreur inattendue'; return; }
+            saveHistory(question);
+            answer.innerHTML = `<div class="result-shell"><div class="result-card"><strong>Réponse</strong><p>${data.answer}</p></div></div>`;
+            const meta = data.metadata || {};
+            badges.innerHTML = [
+                `<span class="result-badge">${meta.rows_used || 0} ligne(s) utilisée(s)</span>`,
+                meta.fictitious ? '<span class="result-badge">Données fictives</span>' : '<span class="result-badge">Données prêtes</span>'
+            ].join('');
+            renderTable(data.table);
+            if (data.chart) {
+                renderChart(data.chart);
+            } else {
+                chartCanvas.innerHTML = '<div style="padding:1rem;color:#94a3b8;">Un graphique apparaîtra pour les comparaisons, tendances et classements.</div>';
+            }
+        });
+        async function refreshAnalytics() {
+            const params = new URLSearchParams();
+            if (analyticsRegion.value) params.set('region', analyticsRegion.value);
+            if (analyticsYear.value) params.set('year', analyticsYear.value);
+            params.set('mode', 'analytics');
+            const response = await fetch(`{% url 'chat' %}?${params.toString()}`);
+            const data = await response.json();
+            const summary = data.summary || {};
+            analyticsSummary.innerHTML = `
+                <div class="analytics-card">
+                    <div class="insight-pill">🧠 Résumé intelligent</div>
+                    <p style="margin:0.6rem 0 0; line-height:1.7;">${summary.summary || 'Aucun résumé disponible.'}</p>
+                </div>
+                <div class="analytics-card">
+                    <div class="filter-row" style="margin-bottom:0.2rem;">
+                        <span class="insight-pill">🏆 Région dominante : ${summary.top_region || 'N/A'}</span>
+                        <span class="insight-pill">📈 Indicateur le plus fort : ${summary.highest_indicator || 'N/A'}</span>
+                        <span class="insight-pill">👥 Population moyenne : ${summary.average_population || 0}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        analyticsRefresh.addEventListener('click', refreshAnalytics);
+        analyticsRegion.addEventListener('change', refreshAnalytics);
+        analyticsYear.addEventListener('change', refreshAnalytics);
+        renderHistory();
+        refreshAnalytics();
+
+        function renderTable(rows) {
+            if (!rows.length) { table.innerHTML = '<tr><td colspan="2">Aucune donnée disponible</td></tr>'; return; }
+            const headers = Object.keys(rows[0]);
+            table.innerHTML = '<tr>' + headers.map(h => '<th>' + h + '</th>').join('') + '</tr>' + rows.map(row => '<tr>' + headers.map(h => '<td>' + row[h] + '</td>').join('') + '</tr>').join('');
+        }
+        function renderChart(chart) {
+            const width = 620;
+            const height = 300;
+            const padding = 46;
+            const values = chart.datasets?.[0]?.data || [];
+            const labels = chart.labels || [];
+            const chartType = chart.type || 'bar';
+            if (!values.length) {
+                chartCanvas.innerHTML = '<div style="padding:1rem;color:#94a3b8;">Aucune donnée à visualiser.</div>';
+                return;
+            }
+            const maxValue = Math.max(...values.map(v => Number(v))) * 1.15;
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+            svg.setAttribute('width', '100%');
+            svg.setAttribute('height', '100%');
+            svg.setAttribute('style', 'display:block;');
+            const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+            const filter = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
+            filter.setAttribute('id', 'shadowGlow');
+            const feDropShadow = document.createElementNS('http://www.w3.org/2000/svg', 'feDropShadow');
+            feDropShadow.setAttribute('dx', '0');
+            feDropShadow.setAttribute('dy', '4');
+            feDropShadow.setAttribute('stdDeviation', '3');
+            feDropShadow.setAttribute('flood-color', 'rgba(0,0,0,0.35)');
+            filter.appendChild(feDropShadow);
+            defs.appendChild(filter);
+            svg.appendChild(defs);
+            const axisColor = '#64748b';
+            const lineColor = '#38bdf8';
+            const barColor = '#34d399';
+            const textColor = '#e2e8f0';
+            const gridColor = 'rgba(148,163,184,0.16)';
+            const xStep = (width - padding * 2) / Math.max(values.length, 1);
+            const yScale = (height - padding * 2) / maxValue;
+            for (let i = 0; i <= 4; i++) {
+                const y = padding + ((height - padding * 2) / 4) * i;
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', padding);
+                line.setAttribute('y1', y);
+                line.setAttribute('x2', width - padding);
+                line.setAttribute('y2', y);
+                line.setAttribute('stroke', gridColor);
+                line.setAttribute('stroke-width', '1');
+                svg.appendChild(line);
+            }
+            const baseLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            baseLine.setAttribute('x1', padding);
+            baseLine.setAttribute('y1', height - padding);
+            baseLine.setAttribute('x2', width - padding);
+            baseLine.setAttribute('y2', height - padding);
+            baseLine.setAttribute('stroke', axisColor);
+            baseLine.setAttribute('stroke-width', '1.3');
+            svg.appendChild(baseLine);
+            const verticalLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            verticalLine.setAttribute('x1', padding);
+            verticalLine.setAttribute('y1', padding);
+            verticalLine.setAttribute('x2', padding);
+            verticalLine.setAttribute('y2', height - padding);
+            verticalLine.setAttribute('stroke', axisColor);
+            verticalLine.setAttribute('stroke-width', '1.3');
+            svg.appendChild(verticalLine);
+
+            if (chartType === 'bar') {
+                const barWidth = Math.min(48, xStep * 0.55);
+                values.forEach((value, index) => {
+                    const x = padding + index * xStep + (xStep - barWidth) / 2;
+                    const barHeight = Number(value) * yScale;
+                    const y = height - padding - barHeight;
+                    const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                    rect.setAttribute('x', x);
+                    rect.setAttribute('y', y);
+                    rect.setAttribute('width', barWidth);
+                    rect.setAttribute('height', barHeight);
+                    rect.setAttribute('rx', '8');
+                    rect.setAttribute('fill', barColor);
+                    rect.setAttribute('filter', 'url(#shadowGlow)');
+                    svg.appendChild(rect);
+                    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    label.setAttribute('x', x + barWidth / 2);
+                    label.setAttribute('y', height - 18);
+                    label.setAttribute('fill', textColor);
+                    label.setAttribute('font-size', '11');
+                    label.setAttribute('text-anchor', 'middle');
+                    label.textContent = labels[index] ?? index + 1;
+                    svg.appendChild(label);
+                    const valueLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    valueLabel.setAttribute('x', x + barWidth / 2);
+                    valueLabel.setAttribute('y', y - 8);
+                    valueLabel.setAttribute('fill', textColor);
+                    valueLabel.setAttribute('font-size', '10');
+                    valueLabel.setAttribute('text-anchor', 'middle');
+                    valueLabel.textContent = Number(value).toFixed(1);
+                    svg.appendChild(valueLabel);
+                });
+            } else {
+                const pathPoints = values.map((value, index) => {
+                    const x = padding + index * xStep + xStep / 2;
+                    const y = height - padding - Number(value) * yScale;
+                    return `${x},${y}`;
+                });
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+                line.setAttribute('fill', 'none');
+                line.setAttribute('stroke', lineColor);
+                line.setAttribute('stroke-width', '3.2');
+                line.setAttribute('points', pathPoints.join(' '));
+                svg.appendChild(line);
+                values.forEach((value, index) => {
+                    const x = padding + index * xStep + xStep / 2;
+                    const y = height - padding - Number(value) * yScale;
+                    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    circle.setAttribute('cx', x);
+                    circle.setAttribute('cy', y);
+                    circle.setAttribute('r', '5.5');
+                    circle.setAttribute('fill', '#38bdf8');
+                    svg.appendChild(circle);
+                    const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    label.setAttribute('x', x);
+                    label.setAttribute('y', height - 18);
+                    label.setAttribute('fill', textColor);
+                    label.setAttribute('font-size', '11');
+                    label.setAttribute('text-anchor', 'middle');
+                    label.textContent = labels[index] ?? index + 1;
+                    svg.appendChild(label);
+                    const valueLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    valueLabel.setAttribute('x', x);
+                    valueLabel.setAttribute('y', y - 10);
+                    valueLabel.setAttribute('fill', textColor);
+                    valueLabel.setAttribute('font-size', '10');
+                    valueLabel.setAttribute('text-anchor', 'middle');
+                    valueLabel.textContent = Number(value).toFixed(1);
+                    svg.appendChild(valueLabel);
+                });
+            }
+            const legend = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            legend.setAttribute('x', width - 178);
+            legend.setAttribute('y', 16);
+            legend.setAttribute('width', 132);
+            legend.setAttribute('height', 46);
+            legend.setAttribute('rx', 12);
+            legend.setAttribute('fill', 'rgba(15,23,42,0.72)');
+            legend.setAttribute('stroke', 'rgba(148,163,184,0.2)');
+            svg.appendChild(legend);
+            const legendLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            legendLine.setAttribute('x1', width - 150);
+            legendLine.setAttribute('y1', 32);
+            legendLine.setAttribute('x2', width - 125);
+            legendLine.setAttribute('y2', 32);
+            legendLine.setAttribute('stroke', chartType === 'bar' ? barColor : lineColor);
+            legendLine.setAttribute('stroke-width', '3');
+            svg.appendChild(legendLine);
+            const legendText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            legendText.setAttribute('x', width - 116);
+            legendText.setAttribute('y', 36);
+            legendText.setAttribute('fill', textColor);
+            legendText.setAttribute('font-size', '11');
+            legendText.textContent = chartType === 'bar' ? 'Comparaison' : 'Évolution';
+            svg.appendChild(legendText);
+            chartCanvas.innerHTML = '';
+            chartCanvas.appendChild(svg);
+        }
+    </script>
+</body>
+</html>
