@@ -30,6 +30,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'pp715q%x9*fr04f5aac9!-$y)x7+&q
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')
+CSRF_TRUSTED_ORIGINS = [
+    "https://agent-ia-statistiques.onrender.com",
+]
 
 
 # Application definition
