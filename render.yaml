@@ -3,8 +3,7 @@ services:
     name: agent-ia-statistiques-backend
     env: python
     plan: free
-    repo: "REPLACE_WITH_GIT_REPO_URL"
-    buildCommand: python -m pip install --upgrade pip setuptools wheel && python -m pip install -r requirements.txt
+    buildCommand: pip install -r requirements.txt
     startCommand: gunicorn config.wsgi:application --bind 0.0.0.0:$PORT
     releaseCommand: python manage.py migrate && python manage.py collectstatic --noinput
     envVars:
