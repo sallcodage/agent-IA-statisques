@@ -6,15 +6,23 @@ services:
 
     buildCommand: pip install -r requirements.txt
 
-    startCommand: gunicorn config.wsgi:application --bind 0.0.0.0:$PORT
-
     releaseCommand: >
       python manage.py migrate &&
-      python manage.py loaddata statistiques.json --ignorenonexistent &&
+      python manage.py loaddata statistiques.json &&
+      python manage.py shell -c "from config.apps.statistiques.models import StatistiqueRegionale; print('TOTAL DONNEES:', StatistiqueRegionale.objects.count())" &&
       python manage.py collectstatic --noinput
+
+    startCommand: gunicorn config.wsgi:application --bind 0.0.0.0:$PORT
 
     envVars:
       - key: DJANGO_SECRET_KEY
+        sync: false
+
       - key: DJANGO_DEBUG
+        value: False
+
       - key: DJANGO_ALLOWED_HOSTS
+        value: agent-ia-statistiques.onrender.com
+
       - key: DATABASE_URL
+        sync: false
