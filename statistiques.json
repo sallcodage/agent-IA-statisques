@@ -1,0 +1,1192 @@
+[
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 1,
+  "fields": {
+    "region": "Dakar",
+    "annee": 2020,
+    "population": 3920000,
+    "taux_urbanisation_pct": "97.20",
+    "taux_alphabetisation_pct": "80.50",
+    "taux_chomage_pct": "14.80",
+    "taux_pauvrete_pct": "9.10",
+    "acces_internet_pct": "74.00",
+    "centres_sante": 138,
+    "taux_scolarisation_pct": "91.00",
+    "production_cerealiere_tonnes": 18324
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 2,
+  "fields": {
+    "region": "Dakar",
+    "annee": 2021,
+    "population": 4021920,
+    "taux_urbanisation_pct": "97.50",
+    "taux_alphabetisation_pct": "81.50",
+    "taux_chomage_pct": "15.60",
+    "taux_pauvrete_pct": "8.40",
+    "acces_internet_pct": "78.20",
+    "centres_sante": 140,
+    "taux_scolarisation_pct": "91.90",
+    "production_cerealiere_tonnes": 18126
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 3,
+  "fields": {
+    "region": "Dakar",
+    "annee": 2022,
+    "population": 4126490,
+    "taux_urbanisation_pct": "97.90",
+    "taux_alphabetisation_pct": "82.60",
+    "taux_chomage_pct": "14.30",
+    "taux_pauvrete_pct": "7.80",
+    "acces_internet_pct": "82.40",
+    "centres_sante": 142,
+    "taux_scolarisation_pct": "92.80",
+    "production_cerealiere_tonnes": 18900
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 4,
+  "fields": {
+    "region": "Dakar",
+    "annee": 2023,
+    "population": 4233779,
+    "taux_urbanisation_pct": "98.30",
+    "taux_alphabetisation_pct": "83.70",
+    "taux_chomage_pct": "14.10",
+    "taux_pauvrete_pct": "7.10",
+    "acces_internet_pct": "86.60",
+    "centres_sante": 144,
+    "taux_scolarisation_pct": "93.70",
+    "production_cerealiere_tonnes": 19674
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 5,
+  "fields": {
+    "region": "Dakar",
+    "annee": 2024,
+    "population": 4343857,
+    "taux_urbanisation_pct": "98.60",
+    "taux_alphabetisation_pct": "84.70",
+    "taux_chomage_pct": "13.80",
+    "taux_pauvrete_pct": "6.50",
+    "acces_internet_pct": "90.80",
+    "centres_sante": 146,
+    "taux_scolarisation_pct": "94.60",
+    "production_cerealiere_tonnes": 19476
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 6,
+  "fields": {
+    "region": "Diourbel",
+    "annee": 2020,
+    "population": 1900000,
+    "taux_urbanisation_pct": "18.80",
+    "taux_alphabetisation_pct": "52.00",
+    "taux_chomage_pct": "10.30",
+    "taux_pauvrete_pct": "46.00",
+    "acces_internet_pct": "36.00",
+    "centres_sante": 72,
+    "taux_scolarisation_pct": "72.00",
+    "production_cerealiere_tonnes": 147610
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 7,
+  "fields": {
+    "region": "Diourbel",
+    "annee": 2021,
+    "population": 1953390,
+    "taux_urbanisation_pct": "19.20",
+    "taux_alphabetisation_pct": "53.00",
+    "taux_chomage_pct": "11.10",
+    "taux_pauvrete_pct": "45.40",
+    "acces_internet_pct": "40.20",
+    "centres_sante": 74,
+    "taux_scolarisation_pct": "72.90",
+    "production_cerealiere_tonnes": 146015
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 8,
+  "fields": {
+    "region": "Diourbel",
+    "annee": 2022,
+    "population": 2008280,
+    "taux_urbanisation_pct": "19.50",
+    "taux_alphabetisation_pct": "54.10",
+    "taux_chomage_pct": "9.80",
+    "taux_pauvrete_pct": "44.70",
+    "acces_internet_pct": "44.40",
+    "centres_sante": 76,
+    "taux_scolarisation_pct": "73.80",
+    "production_cerealiere_tonnes": 152250
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 9,
+  "fields": {
+    "region": "Diourbel",
+    "annee": 2023,
+    "population": 2064713,
+    "taux_urbanisation_pct": "19.90",
+    "taux_alphabetisation_pct": "55.10",
+    "taux_chomage_pct": "9.60",
+    "taux_pauvrete_pct": "44.00",
+    "acces_internet_pct": "48.60",
+    "centres_sante": 78,
+    "taux_scolarisation_pct": "74.70",
+    "production_cerealiere_tonnes": 158485
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 10,
+  "fields": {
+    "region": "Diourbel",
+    "annee": 2024,
+    "population": 2122731,
+    "taux_urbanisation_pct": "20.20",
+    "taux_alphabetisation_pct": "56.20",
+    "taux_chomage_pct": "9.30",
+    "taux_pauvrete_pct": "43.40",
+    "acces_internet_pct": "52.80",
+    "centres_sante": 80,
+    "taux_scolarisation_pct": "75.60",
+    "production_cerealiere_tonnes": 156890
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 11,
+  "fields": {
+    "region": "Fatick",
+    "annee": 2020,
+    "population": 930000,
+    "taux_urbanisation_pct": "19.50",
+    "taux_alphabetisation_pct": "56.00",
+    "taux_chomage_pct": "8.80",
+    "taux_pauvrete_pct": "38.50",
+    "acces_internet_pct": "39.00",
+    "centres_sante": 49,
+    "taux_scolarisation_pct": "76.00",
+    "production_cerealiere_tonnes": 168000
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 12,
+  "fields": {
+    "region": "Fatick",
+    "annee": 2021,
+    "population": 954831,
+    "taux_urbanisation_pct": "19.90",
+    "taux_alphabetisation_pct": "57.00",
+    "taux_chomage_pct": "9.60",
+    "taux_pauvrete_pct": "37.90",
+    "acces_internet_pct": "43.20",
+    "centres_sante": 51,
+    "taux_scolarisation_pct": "76.90",
+    "production_cerealiere_tonnes": 175224
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 13,
+  "fields": {
+    "region": "Fatick",
+    "annee": 2022,
+    "population": 980325,
+    "taux_urbanisation_pct": "20.20",
+    "taux_alphabetisation_pct": "58.10",
+    "taux_chomage_pct": "8.30",
+    "taux_pauvrete_pct": "37.20",
+    "acces_internet_pct": "47.40",
+    "centres_sante": 53,
+    "taux_scolarisation_pct": "77.80",
+    "production_cerealiere_tonnes": 173376
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 14,
+  "fields": {
+    "region": "Fatick",
+    "annee": 2023,
+    "population": 1006500,
+    "taux_urbanisation_pct": "20.60",
+    "taux_alphabetisation_pct": "59.10",
+    "taux_chomage_pct": "8.10",
+    "taux_pauvrete_pct": "36.50",
+    "acces_internet_pct": "51.60",
+    "centres_sante": 55,
+    "taux_scolarisation_pct": "78.70",
+    "production_cerealiere_tonnes": 180600
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 15,
+  "fields": {
+    "region": "Fatick",
+    "annee": 2024,
+    "population": 1033373,
+    "taux_urbanisation_pct": "20.90",
+    "taux_alphabetisation_pct": "60.20",
+    "taux_chomage_pct": "7.80",
+    "taux_pauvrete_pct": "35.90",
+    "acces_internet_pct": "55.80",
+    "centres_sante": 57,
+    "taux_scolarisation_pct": "79.60",
+    "production_cerealiere_tonnes": 187824
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 16,
+  "fields": {
+    "region": "Kaffrine",
+    "annee": 2020,
+    "population": 820000,
+    "taux_urbanisation_pct": "15.30",
+    "taux_alphabetisation_pct": "45.00",
+    "taux_chomage_pct": "9.20",
+    "taux_pauvrete_pct": "53.00",
+    "acces_internet_pct": "29.00",
+    "centres_sante": 41,
+    "taux_scolarisation_pct": "65.00",
+    "production_cerealiere_tonnes": 210148
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 17,
+  "fields": {
+    "region": "Kaffrine",
+    "annee": 2021,
+    "population": 843042,
+    "taux_urbanisation_pct": "15.70",
+    "taux_alphabetisation_pct": "46.00",
+    "taux_chomage_pct": "10.00",
+    "taux_pauvrete_pct": "52.40",
+    "acces_internet_pct": "33.20",
+    "centres_sante": 43,
+    "taux_scolarisation_pct": "65.90",
+    "production_cerealiere_tonnes": 219350
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 18,
+  "fields": {
+    "region": "Kaffrine",
+    "annee": 2022,
+    "population": 866731,
+    "taux_urbanisation_pct": "16.00",
+    "taux_alphabetisation_pct": "47.10",
+    "taux_chomage_pct": "8.70",
+    "taux_pauvrete_pct": "51.70",
+    "acces_internet_pct": "37.40",
+    "centres_sante": 45,
+    "taux_scolarisation_pct": "66.80",
+    "production_cerealiere_tonnes": 228552
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 19,
+  "fields": {
+    "region": "Kaffrine",
+    "annee": 2023,
+    "population": 891087,
+    "taux_urbanisation_pct": "16.40",
+    "taux_alphabetisation_pct": "48.10",
+    "taux_chomage_pct": "8.40",
+    "taux_pauvrete_pct": "51.00",
+    "acces_internet_pct": "41.60",
+    "centres_sante": 47,
+    "taux_scolarisation_pct": "67.70",
+    "production_cerealiere_tonnes": 226198
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 20,
+  "fields": {
+    "region": "Kaffrine",
+    "annee": 2024,
+    "population": 916126,
+    "taux_urbanisation_pct": "16.70",
+    "taux_alphabetisation_pct": "49.20",
+    "taux_chomage_pct": "8.20",
+    "taux_pauvrete_pct": "50.40",
+    "acces_internet_pct": "45.80",
+    "centres_sante": 49,
+    "taux_scolarisation_pct": "68.60",
+    "production_cerealiere_tonnes": 235400
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 21,
+  "fields": {
+    "region": "Kaolack",
+    "annee": 2020,
+    "population": 1210000,
+    "taux_urbanisation_pct": "36.80",
+    "taux_alphabetisation_pct": "55.50",
+    "taux_chomage_pct": "11.40",
+    "taux_pauvrete_pct": "41.00",
+    "acces_internet_pct": "41.00",
+    "centres_sante": 63,
+    "taux_scolarisation_pct": "74.00",
+    "production_cerealiere_tonnes": 194436
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 22,
+  "fields": {
+    "region": "Kaolack",
+    "annee": 2021,
+    "population": 1243154,
+    "taux_urbanisation_pct": "37.10",
+    "taux_alphabetisation_pct": "56.50",
+    "taux_chomage_pct": "12.20",
+    "taux_pauvrete_pct": "40.40",
+    "acces_internet_pct": "45.20",
+    "centres_sante": 65,
+    "taux_scolarisation_pct": "74.90",
+    "production_cerealiere_tonnes": 202950
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 23,
+  "fields": {
+    "region": "Kaolack",
+    "annee": 2022,
+    "population": 1277216,
+    "taux_urbanisation_pct": "37.50",
+    "taux_alphabetisation_pct": "57.60",
+    "taux_chomage_pct": "10.90",
+    "taux_pauvrete_pct": "39.70",
+    "acces_internet_pct": "49.40",
+    "centres_sante": 67,
+    "taux_scolarisation_pct": "75.80",
+    "production_cerealiere_tonnes": 211464
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 24,
+  "fields": {
+    "region": "Kaolack",
+    "annee": 2023,
+    "population": 1312212,
+    "taux_urbanisation_pct": "37.80",
+    "taux_alphabetisation_pct": "58.60",
+    "taux_chomage_pct": "10.70",
+    "taux_pauvrete_pct": "39.00",
+    "acces_internet_pct": "53.60",
+    "centres_sante": 69,
+    "taux_scolarisation_pct": "76.70",
+    "production_cerealiere_tonnes": 209286
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 25,
+  "fields": {
+    "region": "Kaolack",
+    "annee": 2024,
+    "population": 1348167,
+    "taux_urbanisation_pct": "38.20",
+    "taux_alphabetisation_pct": "59.70",
+    "taux_chomage_pct": "10.40",
+    "taux_pauvrete_pct": "38.40",
+    "acces_internet_pct": "57.80",
+    "centres_sante": 71,
+    "taux_scolarisation_pct": "77.60",
+    "production_cerealiere_tonnes": 217800
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 26,
+  "fields": {
+    "region": "Kédougou",
+    "annee": 2020,
+    "population": 210000,
+    "taux_urbanisation_pct": "27.00",
+    "taux_alphabetisation_pct": "48.00",
+    "taux_chomage_pct": "7.80",
+    "taux_pauvrete_pct": "49.00",
+    "acces_internet_pct": "31.00",
+    "centres_sante": 24,
+    "taux_scolarisation_pct": "68.00",
+    "production_cerealiere_tonnes": 40262
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 27,
+  "fields": {
+    "region": "Kédougou",
+    "annee": 2021,
+    "population": 215901,
+    "taux_urbanisation_pct": "27.40",
+    "taux_alphabetisation_pct": "49.00",
+    "taux_chomage_pct": "8.60",
+    "taux_pauvrete_pct": "48.40",
+    "acces_internet_pct": "35.20",
+    "centres_sante": 26,
+    "taux_scolarisation_pct": "68.90",
+    "production_cerealiere_tonnes": 42025
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 28,
+  "fields": {
+    "region": "Kédougou",
+    "annee": 2022,
+    "population": 221968,
+    "taux_urbanisation_pct": "27.70",
+    "taux_alphabetisation_pct": "50.10",
+    "taux_chomage_pct": "7.30",
+    "taux_pauvrete_pct": "47.70",
+    "acces_internet_pct": "39.40",
+    "centres_sante": 28,
+    "taux_scolarisation_pct": "69.80",
+    "production_cerealiere_tonnes": 43788
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 29,
+  "fields": {
+    "region": "Kédougou",
+    "annee": 2023,
+    "population": 228205,
+    "taux_urbanisation_pct": "28.10",
+    "taux_alphabetisation_pct": "51.10",
+    "taux_chomage_pct": "7.00",
+    "taux_pauvrete_pct": "47.00",
+    "acces_internet_pct": "43.60",
+    "centres_sante": 30,
+    "taux_scolarisation_pct": "70.70",
+    "production_cerealiere_tonnes": 43337
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 30,
+  "fields": {
+    "region": "Kédougou",
+    "annee": 2024,
+    "population": 234618,
+    "taux_urbanisation_pct": "28.40",
+    "taux_alphabetisation_pct": "52.20",
+    "taux_chomage_pct": "6.80",
+    "taux_pauvrete_pct": "46.40",
+    "acces_internet_pct": "47.80",
+    "centres_sante": 32,
+    "taux_scolarisation_pct": "71.60",
+    "production_cerealiere_tonnes": 45100
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 31,
+  "fields": {
+    "region": "Kolda",
+    "annee": 2020,
+    "population": 860000,
+    "taux_urbanisation_pct": "26.50",
+    "taux_alphabetisation_pct": "47.50",
+    "taux_chomage_pct": "8.50",
+    "taux_pauvrete_pct": "55.00",
+    "acces_internet_pct": "30.00",
+    "centres_sante": 47,
+    "taux_scolarisation_pct": "66.00",
+    "production_cerealiere_tonnes": 97218
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 32,
+  "fields": {
+    "region": "Kolda",
+    "annee": 2021,
+    "population": 882360,
+    "taux_urbanisation_pct": "26.90",
+    "taux_alphabetisation_pct": "48.50",
+    "taux_chomage_pct": "9.30",
+    "taux_pauvrete_pct": "54.40",
+    "acces_internet_pct": "34.20",
+    "centres_sante": 49,
+    "taux_scolarisation_pct": "66.90",
+    "production_cerealiere_tonnes": 101475
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 33,
+  "fields": {
+    "region": "Kolda",
+    "annee": 2022,
+    "population": 905301,
+    "taux_urbanisation_pct": "27.20",
+    "taux_alphabetisation_pct": "49.60",
+    "taux_chomage_pct": "8.00",
+    "taux_pauvrete_pct": "53.70",
+    "acces_internet_pct": "38.40",
+    "centres_sante": 51,
+    "taux_scolarisation_pct": "67.80",
+    "production_cerealiere_tonnes": 105732
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 34,
+  "fields": {
+    "region": "Kolda",
+    "annee": 2023,
+    "population": 928839,
+    "taux_urbanisation_pct": "27.60",
+    "taux_alphabetisation_pct": "50.60",
+    "taux_chomage_pct": "7.80",
+    "taux_pauvrete_pct": "53.00",
+    "acces_internet_pct": "42.60",
+    "centres_sante": 53,
+    "taux_scolarisation_pct": "68.70",
+    "production_cerealiere_tonnes": 104643
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 35,
+  "fields": {
+    "region": "Kolda",
+    "annee": 2024,
+    "population": 952989,
+    "taux_urbanisation_pct": "27.90",
+    "taux_alphabetisation_pct": "51.70",
+    "taux_chomage_pct": "7.50",
+    "taux_pauvrete_pct": "52.40",
+    "acces_internet_pct": "46.80",
+    "centres_sante": 55,
+    "taux_scolarisation_pct": "69.60",
+    "production_cerealiere_tonnes": 108900
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 36,
+  "fields": {
+    "region": "Louga",
+    "annee": 2020,
+    "population": 1080000,
+    "taux_urbanisation_pct": "25.00",
+    "taux_alphabetisation_pct": "50.00",
+    "taux_chomage_pct": "9.60",
+    "taux_pauvrete_pct": "47.50",
+    "acces_internet_pct": "34.00",
+    "centres_sante": 55,
+    "taux_scolarisation_pct": "70.00",
+    "production_cerealiere_tonnes": 121000
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 37,
+  "fields": {
+    "region": "Louga",
+    "annee": 2021,
+    "population": 1108080,
+    "taux_urbanisation_pct": "25.40",
+    "taux_alphabetisation_pct": "51.00",
+    "taux_chomage_pct": "10.40",
+    "taux_pauvrete_pct": "46.90",
+    "acces_internet_pct": "38.20",
+    "centres_sante": 57,
+    "taux_scolarisation_pct": "70.90",
+    "production_cerealiere_tonnes": 126203
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 38,
+  "fields": {
+    "region": "Louga",
+    "annee": 2022,
+    "population": 1136890,
+    "taux_urbanisation_pct": "25.70",
+    "taux_alphabetisation_pct": "52.10",
+    "taux_chomage_pct": "9.10",
+    "taux_pauvrete_pct": "46.20",
+    "acces_internet_pct": "42.40",
+    "centres_sante": 59,
+    "taux_scolarisation_pct": "71.80",
+    "production_cerealiere_tonnes": 124872
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 39,
+  "fields": {
+    "region": "Louga",
+    "annee": 2023,
+    "population": 1166449,
+    "taux_urbanisation_pct": "26.10",
+    "taux_alphabetisation_pct": "53.10",
+    "taux_chomage_pct": "8.80",
+    "taux_pauvrete_pct": "45.50",
+    "acces_internet_pct": "46.60",
+    "centres_sante": 61,
+    "taux_scolarisation_pct": "72.70",
+    "production_cerealiere_tonnes": 130075
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 40,
+  "fields": {
+    "region": "Louga",
+    "annee": 2024,
+    "population": 1196777,
+    "taux_urbanisation_pct": "26.40",
+    "taux_alphabetisation_pct": "54.20",
+    "taux_chomage_pct": "8.60",
+    "taux_pauvrete_pct": "44.90",
+    "acces_internet_pct": "50.80",
+    "centres_sante": 63,
+    "taux_scolarisation_pct": "73.60",
+    "production_cerealiere_tonnes": 135278
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 41,
+  "fields": {
+    "region": "Matam",
+    "annee": 2020,
+    "population": 760000,
+    "taux_urbanisation_pct": "24.00",
+    "taux_alphabetisation_pct": "46.00",
+    "taux_chomage_pct": "8.00",
+    "taux_pauvrete_pct": "50.00",
+    "acces_internet_pct": "32.00",
+    "centres_sante": 39,
+    "taux_scolarisation_pct": "67.00",
+    "production_cerealiere_tonnes": 79404
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 42,
+  "fields": {
+    "region": "Matam",
+    "annee": 2021,
+    "population": 779760,
+    "taux_urbanisation_pct": "24.40",
+    "taux_alphabetisation_pct": "47.00",
+    "taux_chomage_pct": "8.80",
+    "taux_pauvrete_pct": "49.40",
+    "acces_internet_pct": "36.20",
+    "centres_sante": 41,
+    "taux_scolarisation_pct": "67.90",
+    "production_cerealiere_tonnes": 78546
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 43,
+  "fields": {
+    "region": "Matam",
+    "annee": 2022,
+    "population": 800034,
+    "taux_urbanisation_pct": "24.70",
+    "taux_alphabetisation_pct": "48.10",
+    "taux_chomage_pct": "7.50",
+    "taux_pauvrete_pct": "48.70",
+    "acces_internet_pct": "40.40",
+    "centres_sante": 43,
+    "taux_scolarisation_pct": "68.80",
+    "production_cerealiere_tonnes": 81900
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 44,
+  "fields": {
+    "region": "Matam",
+    "annee": 2023,
+    "population": 820835,
+    "taux_urbanisation_pct": "25.10",
+    "taux_alphabetisation_pct": "49.10",
+    "taux_chomage_pct": "7.30",
+    "taux_pauvrete_pct": "48.00",
+    "acces_internet_pct": "44.60",
+    "centres_sante": 45,
+    "taux_scolarisation_pct": "69.70",
+    "production_cerealiere_tonnes": 85254
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 45,
+  "fields": {
+    "region": "Matam",
+    "annee": 2024,
+    "population": 842176,
+    "taux_urbanisation_pct": "25.40",
+    "taux_alphabetisation_pct": "50.20",
+    "taux_chomage_pct": "7.00",
+    "taux_pauvrete_pct": "47.40",
+    "acces_internet_pct": "48.80",
+    "centres_sante": 47,
+    "taux_scolarisation_pct": "70.60",
+    "production_cerealiere_tonnes": 84396
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 46,
+  "fields": {
+    "region": "Saint-Louis",
+    "annee": 2020,
+    "population": 1120000,
+    "taux_urbanisation_pct": "48.00",
+    "taux_alphabetisation_pct": "61.00",
+    "taux_chomage_pct": "12.00",
+    "taux_pauvrete_pct": "35.00",
+    "acces_internet_pct": "48.00",
+    "centres_sante": 68,
+    "taux_scolarisation_pct": "80.00",
+    "production_cerealiere_tonnes": 114016
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 47,
+  "fields": {
+    "region": "Saint-Louis",
+    "annee": 2021,
+    "population": 1149904,
+    "taux_urbanisation_pct": "48.40",
+    "taux_alphabetisation_pct": "62.00",
+    "taux_chomage_pct": "12.80",
+    "taux_pauvrete_pct": "34.40",
+    "acces_internet_pct": "52.20",
+    "centres_sante": 70,
+    "taux_scolarisation_pct": "80.90",
+    "production_cerealiere_tonnes": 112784
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 48,
+  "fields": {
+    "region": "Saint-Louis",
+    "annee": 2022,
+    "population": 1180606,
+    "taux_urbanisation_pct": "48.70",
+    "taux_alphabetisation_pct": "63.10",
+    "taux_chomage_pct": "11.50",
+    "taux_pauvrete_pct": "33.70",
+    "acces_internet_pct": "56.40",
+    "centres_sante": 72,
+    "taux_scolarisation_pct": "81.80",
+    "production_cerealiere_tonnes": 117600
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 49,
+  "fields": {
+    "region": "Saint-Louis",
+    "annee": 2023,
+    "population": 1212129,
+    "taux_urbanisation_pct": "49.00",
+    "taux_alphabetisation_pct": "64.20",
+    "taux_chomage_pct": "11.30",
+    "taux_pauvrete_pct": "33.00",
+    "acces_internet_pct": "60.60",
+    "centres_sante": 74,
+    "taux_scolarisation_pct": "82.70",
+    "production_cerealiere_tonnes": 122416
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 50,
+  "fields": {
+    "region": "Saint-Louis",
+    "annee": 2024,
+    "population": 1244492,
+    "taux_urbanisation_pct": "49.40",
+    "taux_alphabetisation_pct": "65.20",
+    "taux_chomage_pct": "11.00",
+    "taux_pauvrete_pct": "32.40",
+    "acces_internet_pct": "64.80",
+    "centres_sante": 76,
+    "taux_scolarisation_pct": "83.60",
+    "production_cerealiere_tonnes": 121184
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 51,
+  "fields": {
+    "region": "Sédhiou",
+    "annee": 2020,
+    "population": 590000,
+    "taux_urbanisation_pct": "23.00",
+    "taux_alphabetisation_pct": "44.00",
+    "taux_chomage_pct": "8.20",
+    "taux_pauvrete_pct": "57.00",
+    "acces_internet_pct": "28.00",
+    "centres_sante": 35,
+    "taux_scolarisation_pct": "64.00",
+    "production_cerealiere_tonnes": 86530
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 52,
+  "fields": {
+    "region": "Sédhiou",
+    "annee": 2021,
+    "population": 606166,
+    "taux_urbanisation_pct": "23.40",
+    "taux_alphabetisation_pct": "45.00",
+    "taux_chomage_pct": "9.00",
+    "taux_pauvrete_pct": "56.40",
+    "acces_internet_pct": "32.20",
+    "centres_sante": 37,
+    "taux_scolarisation_pct": "64.90",
+    "production_cerealiere_tonnes": 85595
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 53,
+  "fields": {
+    "region": "Sédhiou",
+    "annee": 2022,
+    "population": 622775,
+    "taux_urbanisation_pct": "23.70",
+    "taux_alphabetisation_pct": "46.10",
+    "taux_chomage_pct": "7.70",
+    "taux_pauvrete_pct": "55.70",
+    "acces_internet_pct": "36.40",
+    "centres_sante": 39,
+    "taux_scolarisation_pct": "65.80",
+    "production_cerealiere_tonnes": 89250
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 54,
+  "fields": {
+    "region": "Sédhiou",
+    "annee": 2023,
+    "population": 639839,
+    "taux_urbanisation_pct": "24.10",
+    "taux_alphabetisation_pct": "47.10",
+    "taux_chomage_pct": "7.40",
+    "taux_pauvrete_pct": "55.00",
+    "acces_internet_pct": "40.60",
+    "centres_sante": 41,
+    "taux_scolarisation_pct": "66.70",
+    "production_cerealiere_tonnes": 92905
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 55,
+  "fields": {
+    "region": "Sédhiou",
+    "annee": 2024,
+    "population": 657371,
+    "taux_urbanisation_pct": "24.40",
+    "taux_alphabetisation_pct": "48.20",
+    "taux_chomage_pct": "7.20",
+    "taux_pauvrete_pct": "54.40",
+    "acces_internet_pct": "44.80",
+    "centres_sante": 43,
+    "taux_scolarisation_pct": "67.60",
+    "production_cerealiere_tonnes": 91970
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 56,
+  "fields": {
+    "region": "Tambacounda",
+    "annee": 2020,
+    "population": 920000,
+    "taux_urbanisation_pct": "25.00",
+    "taux_alphabetisation_pct": "46.50",
+    "taux_chomage_pct": "8.90",
+    "taux_pauvrete_pct": "54.00",
+    "acces_internet_pct": "30.00",
+    "centres_sante": 44,
+    "taux_scolarisation_pct": "66.00",
+    "production_cerealiere_tonnes": 131588
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 57,
+  "fields": {
+    "region": "Tambacounda",
+    "annee": 2021,
+    "population": 944564,
+    "taux_urbanisation_pct": "25.40",
+    "taux_alphabetisation_pct": "47.50",
+    "taux_chomage_pct": "9.70",
+    "taux_pauvrete_pct": "53.40",
+    "acces_internet_pct": "34.20",
+    "centres_sante": 46,
+    "taux_scolarisation_pct": "66.90",
+    "production_cerealiere_tonnes": 137350
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 58,
+  "fields": {
+    "region": "Tambacounda",
+    "annee": 2022,
+    "population": 969784,
+    "taux_urbanisation_pct": "25.70",
+    "taux_alphabetisation_pct": "48.60",
+    "taux_chomage_pct": "8.40",
+    "taux_pauvrete_pct": "52.70",
+    "acces_internet_pct": "38.40",
+    "centres_sante": 48,
+    "taux_scolarisation_pct": "67.80",
+    "production_cerealiere_tonnes": 143112
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 59,
+  "fields": {
+    "region": "Tambacounda",
+    "annee": 2023,
+    "population": 995677,
+    "taux_urbanisation_pct": "26.10",
+    "taux_alphabetisation_pct": "49.60",
+    "taux_chomage_pct": "8.20",
+    "taux_pauvrete_pct": "52.00",
+    "acces_internet_pct": "42.60",
+    "centres_sante": 50,
+    "taux_scolarisation_pct": "68.70",
+    "production_cerealiere_tonnes": 141638
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 60,
+  "fields": {
+    "region": "Tambacounda",
+    "annee": 2024,
+    "population": 1022262,
+    "taux_urbanisation_pct": "26.40",
+    "taux_alphabetisation_pct": "50.70",
+    "taux_chomage_pct": "7.90",
+    "taux_pauvrete_pct": "51.40",
+    "acces_internet_pct": "46.80",
+    "centres_sante": 52,
+    "taux_scolarisation_pct": "69.60",
+    "production_cerealiere_tonnes": 147400
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 61,
+  "fields": {
+    "region": "Thiès",
+    "annee": 2020,
+    "population": 2240000,
+    "taux_urbanisation_pct": "52.00",
+    "taux_alphabetisation_pct": "67.00",
+    "taux_chomage_pct": "13.00",
+    "taux_pauvrete_pct": "28.00",
+    "acces_internet_pct": "56.00",
+    "centres_sante": 102,
+    "taux_scolarisation_pct": "84.00",
+    "production_cerealiere_tonnes": 152210
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 62,
+  "fields": {
+    "region": "Thiès",
+    "annee": 2021,
+    "population": 2298240,
+    "taux_urbanisation_pct": "52.40",
+    "taux_alphabetisation_pct": "68.00",
+    "taux_chomage_pct": "13.80",
+    "taux_pauvrete_pct": "27.40",
+    "acces_internet_pct": "60.20",
+    "centres_sante": 104,
+    "taux_scolarisation_pct": "84.90",
+    "production_cerealiere_tonnes": 158875
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 63,
+  "fields": {
+    "region": "Thiès",
+    "annee": 2022,
+    "population": 2357994,
+    "taux_urbanisation_pct": "52.70",
+    "taux_alphabetisation_pct": "69.10",
+    "taux_chomage_pct": "12.50",
+    "taux_pauvrete_pct": "26.70",
+    "acces_internet_pct": "64.40",
+    "centres_sante": 106,
+    "taux_scolarisation_pct": "85.80",
+    "production_cerealiere_tonnes": 165540
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 64,
+  "fields": {
+    "region": "Thiès",
+    "annee": 2023,
+    "population": 2419302,
+    "taux_urbanisation_pct": "53.00",
+    "taux_alphabetisation_pct": "70.20",
+    "taux_chomage_pct": "12.30",
+    "taux_pauvrete_pct": "26.10",
+    "acces_internet_pct": "68.60",
+    "centres_sante": 108,
+    "taux_scolarisation_pct": "86.70",
+    "production_cerealiere_tonnes": 163835
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 65,
+  "fields": {
+    "region": "Thiès",
+    "annee": 2024,
+    "population": 2482204,
+    "taux_urbanisation_pct": "53.40",
+    "taux_alphabetisation_pct": "71.20",
+    "taux_chomage_pct": "12.00",
+    "taux_pauvrete_pct": "25.40",
+    "acces_internet_pct": "72.80",
+    "centres_sante": 110,
+    "taux_scolarisation_pct": "87.60",
+    "production_cerealiere_tonnes": 170500
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 66,
+  "fields": {
+    "region": "Ziguinchor",
+    "annee": 2020,
+    "population": 720000,
+    "taux_urbanisation_pct": "49.00",
+    "taux_alphabetisation_pct": "64.00",
+    "taux_chomage_pct": "10.50",
+    "taux_pauvrete_pct": "36.00",
+    "acces_internet_pct": "49.00",
+    "centres_sante": 51,
+    "taux_scolarisation_pct": "81.00",
+    "production_cerealiere_tonnes": 90344
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 67,
+  "fields": {
+    "region": "Ziguinchor",
+    "annee": 2021,
+    "population": 738720,
+    "taux_urbanisation_pct": "49.40",
+    "taux_alphabetisation_pct": "65.00",
+    "taux_chomage_pct": "11.30",
+    "taux_pauvrete_pct": "35.40",
+    "acces_internet_pct": "53.20",
+    "centres_sante": 53,
+    "taux_scolarisation_pct": "81.90",
+    "production_cerealiere_tonnes": 94300
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 68,
+  "fields": {
+    "region": "Ziguinchor",
+    "annee": 2022,
+    "population": 757927,
+    "taux_urbanisation_pct": "49.70",
+    "taux_alphabetisation_pct": "66.10",
+    "taux_chomage_pct": "10.00",
+    "taux_pauvrete_pct": "34.70",
+    "acces_internet_pct": "57.40",
+    "centres_sante": 55,
+    "taux_scolarisation_pct": "82.80",
+    "production_cerealiere_tonnes": 98256
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 69,
+  "fields": {
+    "region": "Ziguinchor",
+    "annee": 2023,
+    "population": 777633,
+    "taux_urbanisation_pct": "50.00",
+    "taux_alphabetisation_pct": "67.20",
+    "taux_chomage_pct": "9.80",
+    "taux_pauvrete_pct": "34.00",
+    "acces_internet_pct": "61.60",
+    "centres_sante": 57,
+    "taux_scolarisation_pct": "83.70",
+    "production_cerealiere_tonnes": 97244
+  }
+},
+{
+  "model": "statistiques.statistiqueregionale",
+  "pk": 70,
+  "fields": {
+    "region": "Ziguinchor",
+    "annee": 2024,
+    "population": 797851,
+    "taux_urbanisation_pct": "50.40",
+    "taux_alphabetisation_pct": "68.20",
+    "taux_chomage_pct": "9.50",
+    "taux_pauvrete_pct": "33.40",
+    "acces_internet_pct": "65.80",
+    "centres_sante": 59,
+    "taux_scolarisation_pct": "84.60",
+    "production_cerealiere_tonnes": 101200
+  }
+}
+]
