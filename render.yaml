@@ -5,7 +5,7 @@ services:
     plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn config.wsgi:application --bind 0.0.0.0:$PORT
-    releaseCommand: python manage.py migrate --fake-initial && python manage.py collectstatic --noinput
+    releaseCommand: python manage.py migrate --fake-initial && python manage.py loaddata statistiques.json && python manage.py collectstatic --noinput
     envVars:
       - key: DJANGO_SECRET_KEY
       - key: DJANGO_DEBUG
