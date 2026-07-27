@@ -428,7 +428,7 @@
   "model": "statistiques.statistiqueregionale",
   "pk": 26,
   "fields": {
-    "region": "Kédougou",
+    "region": "Kï¿½dougou",
     "annee": 2020,
     "population": 210000,
     "taux_urbanisation_pct": "27.00",
@@ -445,7 +445,7 @@
   "model": "statistiques.statistiqueregionale",
   "pk": 27,
   "fields": {
-    "region": "Kédougou",
+    "region": "Kï¿½dougou",
     "annee": 2021,
     "population": 215901,
     "taux_urbanisation_pct": "27.40",
@@ -462,7 +462,7 @@
   "model": "statistiques.statistiqueregionale",
   "pk": 28,
   "fields": {
-    "region": "Kédougou",
+    "region": "Kï¿½dougou",
     "annee": 2022,
     "population": 221968,
     "taux_urbanisation_pct": "27.70",
@@ -479,7 +479,7 @@
   "model": "statistiques.statistiqueregionale",
   "pk": 29,
   "fields": {
-    "region": "Kédougou",
+    "region": "Kï¿½dougou",
     "annee": 2023,
     "population": 228205,
     "taux_urbanisation_pct": "28.10",
@@ -496,7 +496,7 @@
   "model": "statistiques.statistiqueregionale",
   "pk": 30,
   "fields": {
-    "region": "Kédougou",
+    "region": "Kï¿½dougou",
     "annee": 2024,
     "population": 234618,
     "taux_urbanisation_pct": "28.40",
@@ -853,7 +853,7 @@
   "model": "statistiques.statistiqueregionale",
   "pk": 51,
   "fields": {
-    "region": "Sédhiou",
+    "region": "Sï¿½dhiou",
     "annee": 2020,
     "population": 590000,
     "taux_urbanisation_pct": "23.00",
@@ -870,7 +870,7 @@
   "model": "statistiques.statistiqueregionale",
   "pk": 52,
   "fields": {
-    "region": "Sédhiou",
+    "region": "Sï¿½dhiou",
     "annee": 2021,
     "population": 606166,
     "taux_urbanisation_pct": "23.40",
@@ -887,7 +887,7 @@
   "model": "statistiques.statistiqueregionale",
   "pk": 53,
   "fields": {
-    "region": "Sédhiou",
+    "region": "Sï¿½dhiou",
     "annee": 2022,
     "population": 622775,
     "taux_urbanisation_pct": "23.70",
@@ -904,7 +904,7 @@
   "model": "statistiques.statistiqueregionale",
   "pk": 54,
   "fields": {
-    "region": "Sédhiou",
+    "region": "Sï¿½dhiou",
     "annee": 2023,
     "population": 639839,
     "taux_urbanisation_pct": "24.10",
@@ -921,7 +921,7 @@
   "model": "statistiques.statistiqueregionale",
   "pk": 55,
   "fields": {
-    "region": "Sédhiou",
+    "region": "Sï¿½dhiou",
     "annee": 2024,
     "population": 657371,
     "taux_urbanisation_pct": "24.40",
@@ -1023,7 +1023,7 @@
   "model": "statistiques.statistiqueregionale",
   "pk": 61,
   "fields": {
-    "region": "Thiès",
+    "region": "Thiï¿½s",
     "annee": 2020,
     "population": 2240000,
     "taux_urbanisation_pct": "52.00",
@@ -1040,7 +1040,7 @@
   "model": "statistiques.statistiqueregionale",
   "pk": 62,
   "fields": {
-    "region": "Thiès",
+    "region": "Thiï¿½s",
     "annee": 2021,
     "population": 2298240,
     "taux_urbanisation_pct": "52.40",
@@ -1057,7 +1057,7 @@
   "model": "statistiques.statistiqueregionale",
   "pk": 63,
   "fields": {
-    "region": "Thiès",
+    "region": "Thiï¿½s",
     "annee": 2022,
     "population": 2357994,
     "taux_urbanisation_pct": "52.70",
@@ -1074,7 +1074,7 @@
   "model": "statistiques.statistiqueregionale",
   "pk": 64,
   "fields": {
-    "region": "Thiès",
+    "region": "Thiï¿½s",
     "annee": 2023,
     "population": 2419302,
     "taux_urbanisation_pct": "53.00",
@@ -1091,7 +1091,7 @@
   "model": "statistiques.statistiqueregionale",
   "pk": 65,
   "fields": {
-    "region": "Thiès",
+    "region": "Thiï¿½s",
     "annee": 2024,
     "population": 2482204,
     "taux_urbanisation_pct": "53.40",
