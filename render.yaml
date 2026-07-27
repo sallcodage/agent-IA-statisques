@@ -6,7 +6,7 @@ services:
 
     buildCommand: pip install -r requirements.txt
 
-    releaseCommand: >
+    preDeployCommand: >
       python manage.py migrate &&
       python manage.py importer_statistiques data/donnees_statistiques_senegal_fictives.csv &&
       python manage.py shell -c "from config.apps.statistiques.models import StatistiqueRegionale; print('TOTAL DONNEES:', StatistiqueRegionale.objects.count())" &&
