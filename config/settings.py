@@ -26,7 +26,7 @@ load_dotenv(BASE_DIR / ".env")
 
 SECRET_KEY = os.environ.get(
     "DJANGO_SECRET_KEY",
-    "change-this-secret-key-in-render"
+    "change-this-secret-key"
 )
 
 
@@ -36,6 +36,7 @@ DEBUG = os.environ.get(
 ).lower() == "true"
 
 
+
 ALLOWED_HOSTS = [
     host.strip()
     for host in os.environ.get(
@@ -43,6 +44,7 @@ ALLOWED_HOSTS = [
         "localhost,127.0.0.1,agent-ia-statistiques.onrender.com"
     ).split(",")
 ]
+
 
 
 CSRF_TRUSTED_ORIGINS = [
@@ -64,12 +66,13 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
 
-    # Applications projet
     "config.apps.accounts",
     "config.apps.chat",
     "config.apps.core",
     "config.apps.statistiques",
+
 ]
+
 
 
 # =============================================================================
@@ -80,7 +83,6 @@ MIDDLEWARE = [
 
     "django.middleware.security.SecurityMiddleware",
 
-    # Gestion fichiers statiques Render
     "whitenoise.middleware.WhiteNoiseMiddleware",
 
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -94,10 +96,13 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
 
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
 ]
 
 
+
 ROOT_URLCONF = "config.urls"
+
 
 
 # =============================================================================
@@ -107,6 +112,7 @@ ROOT_URLCONF = "config.urls"
 TEMPLATES = [
 
     {
+
         "BACKEND": "django.template.backends.django.DjangoTemplates",
 
         "DIRS": [
@@ -126,12 +132,17 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
 
             ],
+
         },
+
     },
+
 ]
 
 
+
 WSGI_APPLICATION = "config.wsgi.application"
+
 
 
 # =============================================================================
@@ -146,13 +157,8 @@ if DATABASE_URL:
     DATABASES = {
 
         "default": dj_database_url.parse(
-
             DATABASE_URL,
-
             conn_max_age=600,
-
-            ssl_require=True
-
         )
 
     }
@@ -211,6 +217,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
 # =============================================================================
 # LANGUAGE
 # =============================================================================
@@ -234,11 +241,14 @@ STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
-STATICFILES_DIRS = [
+# Evite l'erreur si /static n'existe pas sur Render
+STATICFILES_DIRS = []
 
-    BASE_DIR / "static",
+if (BASE_DIR / "static").exists():
+    STATICFILES_DIRS.append(
+        BASE_DIR / "static"
+    )
 
-]
 
 
 STORAGES = {
@@ -262,16 +272,23 @@ STORAGES = {
 
 
 # =============================================================================
-# SECURITY PRODUCTION
+# PRODUCTION SECURITY
 # =============================================================================
 
 if not DEBUG:
 
-    SECURE_SSL_REDIRECT = False
+    SECURE_PROXY_SSL_HEADER = (
+        "HTTP_X_FORWARDED_PROTO",
+        "https"
+    )
 
     SESSION_COOKIE_SECURE = True
 
     CSRF_COOKIE_SECURE = True
+
+    SECURE_BROWSER_XSS_FILTER = True
+
+    SECURE_CONTENT_TYPE_NOSNIFF = True
 
 
 
