@@ -5,13 +5,12 @@ services:
     plan: free
 
     buildCommand: |
-      pip install --upgrade pip
       pip install -r requirements.txt
 
     preDeployCommand: |
       python manage.py migrate
       python manage.py collectstatic --noinput
-      python manage.py shell -c "from config.apps.statistiques.models import StatistiqueRegionale; print('TOTAL DONNEES:', StatistiqueRegionale.objects.count())"
+      python manage.py importer_statistiques data/donnees_statistiques_senegal_fictives.csv
 
     startCommand: gunicorn config.wsgi:application --bind 0.0.0.0:$PORT
 
@@ -22,11 +21,10 @@ services:
         sync: false
 
       - key: DJANGO_DEBUG
-        value: "False"
+        value: False
 
       - key: DJANGO_ALLOWED_HOSTS
-        value: "agent-ia-statistiques.onrender.com"
-
+        value: agent-ia-statistiques.onrender.com
 
       - key: DATABASE_URL
         sync: false
